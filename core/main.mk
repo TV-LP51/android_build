@@ -187,7 +187,7 @@ endif
 
 
 # Check for the current jdk
-ifeq ($(requires_openjdk), false)
+ifeq ($(requires_openjdk), true)
 # The user asked for java7 openjdk, so check that the host
 # java version is really openjdk
 ifeq ($(shell echo '$(java_version_str)' | grep -i openjdk),)
