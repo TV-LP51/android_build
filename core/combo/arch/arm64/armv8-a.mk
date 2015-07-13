@@ -1,1 +1,9 @@
 arch_variant_cflags :=
+
+# If the chip uses a53 cores, enable the errata workarounds
+ifneq ($(filter $(TARGET_CPU_VARIANT) $(TARGET_2ND_CPU_VARIANT),cortex-a53),)
+    TARGET_CPU_CORTEX_A53 ?= true
+endif
+
+# Leave the flag so devices that need the workaround but don't fit in
+# the check above can still enable it.
