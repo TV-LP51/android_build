@@ -179,15 +179,9 @@ include $(BUILD_SYSTEM)/node_fns.mk
 include $(BUILD_SYSTEM)/product.mk
 include $(BUILD_SYSTEM)/device.mk
 
-<<<<<<< HEAD
 # A VALIDUS build needs only the VALIDUS product makefiles.
 ifneq ($(VALIDUS_BUILD),)
   all_product_configs := $(shell ls device/*/$(VALIDUS_BUILD)/validus.mk)
-=======
-# A CM build needs only the CM product makefiles.
-ifneq ($(CM_BUILD),)
-  all_product_configs := $(shell find device -path "*/$(CM_BUILD)/cm.mk")
->>>>>>> cm/cm-12.1
 else
   ifneq ($(strip $(TARGET_BUILD_APPS)),)
   # An unbundled app build needs only the core product makefiles.
